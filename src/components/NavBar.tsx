@@ -22,6 +22,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { ModeToggle } from '@/components/mode-toggle'
 
 interface MenuItem {
   title: string;
@@ -212,12 +213,13 @@ export default function NavBar({ logo = defaultLogo, menu = defaultMenu, profile
             </div>
           </div>
           <div className="flex gap-2 ml-auto pr-4">
+            <ModeToggle />
             <Button asChild variant="outline" size="icon">
               <a href={profiles.github.url}>
                 <FaGithub className="size-5" />
               </a>
             </Button>
-            <Button asChild size="icon">
+            <Button asChild variant="outline" size="icon">
               <a href={profiles.linkedin.url}>
                 <FaLinkedin className="size-5" />
               </a>
