@@ -1,4 +1,8 @@
-import { Book, Menu } from "lucide-react";
+import { Book, Menu, Heart, Activity, Luggage, School, Bird } from "lucide-react";
+// @ts-ignore
+import MichiganIcon from '@/assets/michigan-wolverines-2.svg?react';
+import WisconsinIcon from '@/assets/wisconsin-badgers.svg?react';
+import MorgridgeIcon from '@/assets/morgridge.svg?react';
 import {
   Accordion,
   AccordionContent,
@@ -56,65 +60,65 @@ interface Navbar1Props {
 }
 
 const defaultLogo = {
-  url: "https://www.shadcnblocks.com",
-  src: "https://www.shadcnblocks.com/images/block/block-1.svg",
-  alt: "logo",
-  title: "Shadcnblocks.com",
+  url: ".",
+  src: "https://img.icons8.com/?size=100&id=111114&format=png&color=FAB005",
+  alt: "z-cute",
+  title: "Zen",
 }
 
 const defaultMenu = [
   { title: "Home",
-    url: "home"
+    url: "."
   },
   { title: "Work Experiences",
     url: "internship-experiences",
     items: [ {
       title: "University of Michigan ITS",
       description: "Software Development Intern",
-      icon: <Book className="size-5 shrink-0" />,
+      icon: <MichiganIcon className="size-8 shrink-0" />,
       url: "um-its"
     }, {
       title: "Wisconsin Sea Grant",
       description: "Software Development Intern",
-      icon: <Book className="size-5 shrink-0" />,
+      icon: <WisconsinIcon className="size-8 shrink-0" />,
       url: "sea-grant"
     }, {
       title: "Morgridge Institute For Research",
       description: "Software Development Intern",
-      icon: <Book className="size-5 shrink-0" />,
+      icon: <MorgridgeIcon className="size-8 shrink-0" />,
       url: "morgridge"
     }]
   },
   { title: "Projects",
     url: "projects",
     items: [ {
-      title: "Yan Ling",
+      title: "Bird",
       description: "AI Chatbot",
-      icon: <Book className="size-5 shrink-0" />,
+      icon: <Bird className="size-6 shrink-0" />,
       url: "yan-ling"
     }]
   },
-  { title: "About Me",
-    url: "about-me",
+  { title: "About",
+    url: "about",
     items: [ {
       title: "Interests",
       description: "My interests and hobbies",
-      icon: <Book className="size-5 shrink-0" />,
+      icon: <Heart className="size-6 shrink-0" />,
       url: "interests"
     }, {
       title: "Life",
       description: "My life experiences",
-      icon: <Book className="size-5 shrink-0" />,
+      icon: <Activity className="size-6 shrink-0" />,
       url: "life"
     }, {
       title: "Travel",
       description: "My travel experiences",
-      icon: <Book className="size-5 shrink-0" />,
+      icon: <Luggage className="size-6 shrink-0" />,
       url: "travel"
     }, {
       title: "Education",
       description: "My education experiences",
-      icon: <Book className="size-5 shrink-0" />,
+      icon: <School className="size-6 shrink-0" />,
       url: "education"
     }]
   }
@@ -157,10 +161,10 @@ const SubMenuLink = React.forwardRef<HTMLAnchorElement, { item: MenuItem }>(
     return (
       <a
         ref={ref}
-        className="w-100 flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground"
+        className="w-105 flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground"
         href={item.url}
       >
-        <div>{item.icon}</div>
+        <div className=" mt-1">{item.icon}</div>
         <div>
           <div className="text-sm font-semibold">{item.title}</div>
           {item.description && (
@@ -206,10 +210,10 @@ export default function NavBar({ logo = defaultLogo, menu = defaultMenu, profile
       <div className="container max-w-none">
         {/* Desktop Menu */}
         <nav className="hidden items-center justify-between lg:flex">
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 pl-4">
             <a href={logo.url} className="flex items-center gap-2">
               <img src={logo.src} className="w-8" alt={logo.alt} />
-              <span className="text-lg font-semibold">{logo.title}</span>
+              <span className="text-lg ml-1 mb-0.5 font-semibold">{logo.title}</span>
             </a>
             <div className="flex items-center">
               <NavigationMenu>
