@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/sheet";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { ModeToggle } from '@/components/mode-toggle'
+import React from 'react'
 
 interface MenuItem {
   title: string;
@@ -151,6 +152,29 @@ const renderMenuItem = (item: MenuItem) => {
   );
 };
 
+const SubMenuLink = React.forwardRef<HTMLAnchorElement, { item: MenuItem }>(
+  ({ item }, ref) => {
+    return (
+      <a
+        ref={ref}
+        className="w-100 flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground"
+        href={item.url}
+      >
+        <div>{item.icon}</div>
+        <div>
+          <div className="text-sm font-semibold">{item.title}</div>
+          {item.description && (
+            <p className="text-sm leading-snug text-muted-foreground">
+              {item.description}
+            </p>
+          )}
+        </div>
+      </a>
+    );
+  }
+);
+SubMenuLink.displayName = "SubMenuLink";
+
 const renderMobileMenuItem = (item: MenuItem) => {
   if (item.items) {
     return (
@@ -174,24 +198,7 @@ const renderMobileMenuItem = (item: MenuItem) => {
   );
 };
 
-const SubMenuLink = ({ item }: { item: MenuItem }) => {
-  return (
-    <a
-      className="flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground"
-      href={item.url}
-    >
-      <div>{item.icon}</div>
-      <div>
-        <div className="text-sm font-semibold">{item.title}</div>
-        {item.description && (
-          <p className="text-sm leading-snug text-muted-foreground">
-            {item.description}
-          </p>
-        )}
-      </div>
-    </a>
-  );
-};
+
 
 export default function NavBar({ logo = defaultLogo, menu = defaultMenu, profiles = defaultProfiles}: Navbar1Props) {
   return (
