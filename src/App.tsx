@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@/components/theme-provider.tsx'
-import { NavBar} from '@/components/NavBar.tsx'
+import NavBar from '@/components/NavBar.tsx'
 
 function App() {
 
