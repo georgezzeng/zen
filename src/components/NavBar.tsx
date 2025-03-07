@@ -1,7 +1,12 @@
-import { Book, Menu, Heart, Activity, Luggage, School, Bird } from "lucide-react";
-// @ts-ignore
+import { Menu, Heart, Activity, Luggage, School, Bird } from "lucide-react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import MichiganIcon from '@/assets/michigan-wolverines-2.svg?react';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import WisconsinIcon from '@/assets/wisconsin-badgers.svg?react';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import MorgridgeIcon from '@/assets/morgridge.svg?react';
 import {
   Accordion,
