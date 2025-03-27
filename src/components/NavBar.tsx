@@ -211,7 +211,7 @@ const renderMobileMenuItem = (item: MenuItem) => {
 
 export default function NavBar({ logo = defaultLogo, menu = defaultMenu, profiles = defaultProfiles}: Navbar1Props) {
   return (
-    <section className="py-4">
+    <section className="py-4 fixed top-0 left-0 right-0 w-full z-50 bg-background shadow-sm">
       <div className="container max-w-none">
         {/* Desktop Menu */}
         <nav className="hidden items-center justify-between lg:flex">
